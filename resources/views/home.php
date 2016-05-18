@@ -10,10 +10,10 @@
         <div class="container">
             <div class="content">
                 <div class="title">
-                    <a href="/login" class="loginLink"><div class="loginButton">Login</div></a>
+                    <a href="auth/login" class="loginLink"><div class="loginButton">Login</div></a>
                 </div>
                 <div class="title">
-                    <a href="/register" class="loginLink"><div class="registerButton">Register</div></a>
+                    <a href="auth/register" class="loginLink"><div class="registerButton">Register</div></a>
                 </div>
                 
             </div>
