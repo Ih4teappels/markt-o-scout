@@ -9,8 +9,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">login, jij inloggen?</div>
-                
+                <form action="login"></form>
             </div>
         </div>
     </body>
