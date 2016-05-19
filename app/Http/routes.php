@@ -40,3 +40,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('/dab', function () {
     return view('dab');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
