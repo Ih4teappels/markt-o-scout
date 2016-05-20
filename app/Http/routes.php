@@ -48,6 +48,10 @@ Route::get('account', function () {
     return view('account');
 });
 
+Route::get('welcome', function () {
+    return view('welcome');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
