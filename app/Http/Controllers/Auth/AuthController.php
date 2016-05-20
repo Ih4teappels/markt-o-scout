@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/welcome';
+    protected $redirectTo = '/home';
 
     //makes sure you can login using username instead of email
     protected $username = 'username';

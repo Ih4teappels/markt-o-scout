@@ -50,12 +50,12 @@
                                 @endif
                             </div>
                         </div>
-
-                        <!-- <div class="form-group{{ $errors->has('residence') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Residence</label>
+                        <div class="form-group{{ $errors->has('residence') ? ' has-error' : '' }}">
+                        
+                        <!--     <label class="col-md-4 control-label">Residence</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="residence" value="{{ old('residence') }}">
+                                <input type="residence" class="form-control" name="residence" value="{{ old('residence') }}">
 
                                 @if ($errors->has('residence'))
                                     <span class="help-block">
