@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/welcome';
 
     //Where to redirect users after failed login
     protected $loginPath = '/login';
@@ -53,7 +53,9 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'username' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'residence' => 'required|residence',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -68,7 +70,9 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
+            'residence' => $data['residence'],
             'password' => bcrypt($data['password']),
         ]);
     }
