@@ -44,6 +44,10 @@ Route::get('/dab', function () {
     return view('dab');
 });
 
+Route::get('account', function () {
+    return view('account');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
