@@ -26,6 +26,8 @@ Route::get('auth/register', function () {
     return view('register');
 });
 
+
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -34,8 +36,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
-
-
 
 
 
@@ -51,6 +51,12 @@ Route::get('account', function () {
 Route::get('welcome', function () {
     return view('welcome');
 });
+
+Route::get('placeAd', function(){
+    return view('placeAd');
+});
+
+
 
 Route::auth();
 
