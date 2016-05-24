@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+Account
+@endsection
+
 @section('content')
 
 <?php
@@ -7,10 +11,9 @@
         $session_id = Auth::User();
 
         echo '<div id="accountInfo">';
-        echo $session_id['name'];
-        echo $session_id['username'];
-        echo $session_id['email'];
-        echo $session_id['password'];
+        echo '<div id="accountName">' . $session_id['name'] . '</div>';
+        echo '<div id="accountUsername">' . $session_id['username'] . '</div>';
+        echo '<div id="accountEmail">' . $session_id['email'] . '</div>';
 
         echo '</div>';
 

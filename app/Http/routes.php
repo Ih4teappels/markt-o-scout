@@ -42,7 +42,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('auth/ad', 'Auth\AuthController@getAd');
 Route::post('auth/ad', 'Auth\AuthController@postAd');
 
-
 //Dab Easter Egg
 Route::get('/dab', function () {
     return view('dab');
