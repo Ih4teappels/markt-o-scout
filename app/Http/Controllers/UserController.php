@@ -75,20 +75,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required|max:120'
-        ]);
-
-        $user = Auth::user();
-
-        $user->name = Request::input('name');
-        $user->username = Request::input('username');
-        $user->email = Request::input('email');
-        $user->save();
-
-        // Auth::user('name')->update;
-
-        return view('account');
+        
 
     }
 
@@ -105,5 +92,22 @@ class UserController extends Controller
 
     public function getAccount() {
         return view('account', ['user' => Auth::user()]);
+    }
+
+    public function postSaveAccount(Request $request) {
+        $this->validate($request, [
+            'name' => 'required|max:120'
+        ]);
+
+        $user = Auth::user();
+
+        $user->name = $request('name');
+        $user->username = $request('username');
+        $user->email = $request('email');
+        $user->update();
+
+        // Auth::user('name')->update;
+
+        return view('account');
     }
 }
