@@ -26,11 +26,7 @@ Route::get('auth/register', function () {
     return view('register');
 });
 
-<<<<<<< HEAD
-Route::get('ad', function () {
-=======
 Route::get('ad', function(){
->>>>>>> d5b4b7875e044640719ac65af45d23c21acf9838
     return view('ad');
 });
 
@@ -43,11 +39,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-<<<<<<< HEAD
 Route::post('ad', 'Auth\AuthController@postAd');
-=======
-Route::post('ad', 'Auth\AuthController@postAd')
->>>>>>> d5b4b7875e044640719ac65af45d23c21acf9838
 
 //Dab Easter Egg
 Route::get('/dab', function () {
@@ -61,7 +53,6 @@ Route::get('account', function () {
 Route::get('welcome', function () {
     return view('welcome');
 });
-
 
 
 
