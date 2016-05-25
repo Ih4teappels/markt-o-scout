@@ -106,5 +106,7 @@ class UserController extends Controller
         $user->update();
 
         return view('account');
+
+        
     }
 }

@@ -44,6 +44,10 @@ Route::post('ad', 'AdController@store');
 Route::get('editProfile', 'UserController@getAccount');
 Route::post('editProfile', 'UserController@postSaveAccount');
 
+Route::get('account/edit', function() {
+	return view('auth/editAccount');
+});
+
 
 //Dab Easter Egg
 Route::get('/dab', function () {

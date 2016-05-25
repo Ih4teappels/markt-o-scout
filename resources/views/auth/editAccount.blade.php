@@ -16,13 +16,13 @@ Account
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Profile</div>
                 <div class="panel-body">
-					<form class="form-horizontal" role="form" method="GET" action="{{ url('/account/edit') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/editProfile') }}">
 						{!! csrf_field() !!}
 						
 						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Name</label>
 <?php
-    echo '<div id="accountName" class="col-md-6">' . $session_id['name'] . '</div>';
+    echo '<div id="accountName" class="col-md-6"><input type="name" class="form-control" name="name" value="' . $session_id['name'] . '"></input></div>';
 ?>
                         @if ($errors->has('name'))
                                     <span class="help-block">
@@ -33,7 +33,7 @@ Account
 						<div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Username</label>
 <?php
-    echo '<div id="accountUsername" class="col-md-6">' . $session_id['username'] . '</div>';
+    echo '<div id="accountUsername" class="col-md-6"><input type="username" class="form-control" name="username" value="' . $session_id['username'] . '"></input></div>';
 ?>
                         @if ($errors->has('username'))
                                     <span class="help-block">
@@ -45,7 +45,7 @@ Account
                             <label class="col-md-4 control-label">Email</label>
 
 <?php      
-    echo '<div id="accountEmail" class="col-md-6">' . $session_id['email'] . '</div>';
+    echo '<div id="accountEmail" class="col-md-6"><input type="email" class="form-control" name="email" value="' . $session_id['email'] . '"></input></div>';
 ?>
                         @if ($errors->has('email'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@ Account
 						<div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-edit"></i>Edit
+                                    <i class="fa fa-btn fa-edit"></i>Save Changes
                                 </button>
                             </div>
                         </div>
