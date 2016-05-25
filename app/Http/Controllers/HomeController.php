@@ -28,16 +28,16 @@ class HomeController extends Controller
         return view('home');
     }
 
-    // public function getAccount() {
-    //     return view('account', ['user' => Auth::user()]);
-    // }
+    public function getAccount() {
+        return view('account', ['user' => Auth::user()]);
+    }
 
-    // public function postSaveAccount(Request $request) {
-    //     $this->validate($request, [
-    //         'name' => 'required|max:120'
-    //     ]);
+    public function postSaveAccount(Request $request) {
+        $this->validate($request, [
+            'name' => 'required|max:120'
+        ]);
 
-    //     Auth::user('name')->update;
+        Auth::user('name')->update;
         
-    // }
+    }
 }
