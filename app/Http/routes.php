@@ -30,9 +30,6 @@ Route::get('ad', function () {
     return view('ad');
 });
 
-
-
-
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

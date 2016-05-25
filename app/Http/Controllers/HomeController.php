@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 
 class HomeController extends Controller
 {
@@ -26,4 +27,17 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    // public function getAccount() {
+    //     return view('account', ['user' => Auth::user()]);
+    // }
+
+    // public function postSaveAccount(Request $request) {
+    //     $this->validate($request, [
+    //         'name' => 'required|max:120'
+    //     ]);
+
+    //     Auth::user('name')->update;
+        
+    // }
 }
