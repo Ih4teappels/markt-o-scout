@@ -39,8 +39,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::post('ad', 'Auth\AuthController@postAd');
-
 Route::get('editProfile', 'UserController@getAccount');
 Route::post('editProfile', 'UserController@update');
 

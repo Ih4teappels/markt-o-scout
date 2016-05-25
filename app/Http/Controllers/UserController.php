@@ -39,7 +39,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $user->name = Request::input('name');
+        // $user->username = Request::input('username');
+        // $user->email = Request::input('email');
     }
 
     /**

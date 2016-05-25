@@ -22,7 +22,6 @@ Account
 						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Name</label>
 <?php
-
     echo '<div id="accountName" class="col-md-6"><input type="name" class="form-control" name="name" value="' . $session_id['name'] . '"></input></div>';
 ?>
 						</div>
@@ -38,7 +37,6 @@ Account
 
 <?php      
     echo '<div id="accountEmail" class="col-md-6"><input type="email" class="form-control" name="email" value="' . $session_id['email'] . '"></input></div>';
-
 ?>
 
 						</div>
