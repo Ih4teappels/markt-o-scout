@@ -25,8 +25,6 @@ class AddNullableToTable extends Migration
      */
     public function down()
     {
-        Schema::table('ad', function (Blueprint $table) {
             Schema::drop('ad');
-        });
     }
 }

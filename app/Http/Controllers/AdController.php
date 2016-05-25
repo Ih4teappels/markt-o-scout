@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -40,10 +41,21 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
+        $id = Auth::user();
+
         DB::table('ad')->insert(
-            ['product_name' => 'ja']
+            [
+                'product_name' =>$request['product_name'],
+                'product_desc' => $request['product_desc'],
+                'city' => $request['city'],
+                'price' => $request['price'],
+                'user_id' => $id->id,
+
+            ]
 
         );
+
+        return view('ad');
     }
 
     /**
