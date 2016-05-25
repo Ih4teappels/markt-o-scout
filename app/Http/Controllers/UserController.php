@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+// use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
+use Auth;
+use App\User;
+use Validator;
 use App\Http\Requests;
 
 class UserController extends Controller
@@ -70,7 +73,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:120'
+        ]);
+
+        $user = Auth::user();
+
+        $user->name = Request::input('name');
+        $user->username = Request::input('username');
+        $user->email = Request::input('email');
+        $user->save();
+
+        // Auth::user('name')->update;
+
+        return view('account');
+
     }
 
     /**
@@ -82,5 +99,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAccount() {
+        return view('account', ['user' => Auth::user()]);
     }
 }
