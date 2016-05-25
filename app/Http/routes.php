@@ -26,10 +26,6 @@ Route::get('auth/register', function () {
     return view('register');
 });
 
-Route::get('ad', function(){
-    return view('ad');
-});
-
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -52,6 +48,10 @@ Route::get('/dab', function () {
 
 Route::get('account', function () {
     return view('account');
+});
+
+Route::get('ad', function(){
+    return view('ad');
 });
 
 Route::get('welcome', function () {
