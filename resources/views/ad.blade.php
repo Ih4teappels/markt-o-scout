@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Place an ad</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/placeAd') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/') }}">
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('product_name') ? ' has-error' : '' }}">
@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('product_desc') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Provide your ad with a detailed descriprtion</label>
+                                <label class="col-md-4 control-label">Provide your ad with a detailed description</label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="product_desc" style="height: 2in">
