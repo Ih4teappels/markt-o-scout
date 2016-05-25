@@ -11,7 +11,11 @@
 |
 */
 
+Route::group(['middleware' => ['web']], function () {
+    // Put all your routes inside here.
 
+
+});
 
 
 Route::get('/', function () {

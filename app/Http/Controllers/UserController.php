@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Request;
-use Auth;
 use App\User;
-use Validator;
-use App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UserController extends Controller
 {
@@ -101,12 +100,10 @@ class UserController extends Controller
 
         $user = Auth::user();
 
-        $user->name = $request('name');
-        $user->username = $request('username');
-        $user->email = $request('email');
+        $user->name = $request['name'];
+        $user->username = $request['username'];
+        $user->email = $request['email'];
         $user->update();
-
-        // Auth::user('name')->update;
 
         return view('account');
     }
