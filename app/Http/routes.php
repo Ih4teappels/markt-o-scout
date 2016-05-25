@@ -42,7 +42,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::post('ad', 'Auth\AuthController@postAd');
 
 Route::get('editProfile', 'UserController@getAccount');
-Route::post('editProfile', 'UserController@postSaveAccount');
+Route::post('editProfile', 'UserController@update');
 
 //Dab Easter Egg
 Route::get('/dab', function () {
