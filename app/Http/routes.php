@@ -11,7 +11,11 @@
 |
 */
 
+Route::group(['middleware' => ['web']], function () {
+    // Put all your routes inside here.
 
+
+});
 
 
 Route::get('/', function () {
@@ -39,6 +43,10 @@ Route::post('ad', 'AdController@store');
 
 Route::get('editProfile', 'UserController@getAccount');
 Route::post('editProfile', 'UserController@postSaveAccount');
+
+Route::get('account/edit', function() {
+	return view('auth/editAccount');
+});
 
 
 //Dab Easter Egg

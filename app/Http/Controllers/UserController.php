@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Request;
-use Auth;
 use App\User;
-use Validator;
-use App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UserController extends Controller
 {
@@ -39,9 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $user->name = Request::input('name');
-        // $user->username = Request::input('username');
-        // $user->email = Request::input('email');
+        
     }
 
     /**
@@ -96,18 +93,20 @@ class UserController extends Controller
 
     public function postSaveAccount(Request $request) {
         $this->validate($request, [
-            'name' => 'required|max:120'
+            'name' => 'required|max:50',
+            'username' => 'max:50',
+            'email' => 'email|max:120'
         ]);
 
         $user = Auth::user();
 
-        $user->name = $request('name');
-        $user->username = $request('username');
-        $user->email = $request('email');
+        $user->name = $request['name'];
+        $user->username = $request['username'];
+        $user->email = $request['email'];
         $user->update();
 
-        // Auth::user('name')->update;
-
         return view('account');
+
+        
     }
 }
