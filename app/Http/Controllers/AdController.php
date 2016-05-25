@@ -29,9 +29,7 @@ class AdController extends Controller
      */
     public function create()
     {
-       DB::table('ad')->insert(
-           ['product_name' => 'product_name']
-       );
+
     }
 
     /**
@@ -42,7 +40,10 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('ad')->insert(
+            ['product_name' => 'ja']
+
+        );
     }
 
     /**

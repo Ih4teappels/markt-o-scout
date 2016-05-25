@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddResidenceFieldToUsersTable extends Migration
+class AddNullableToTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,9 @@ class AddResidenceFieldToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function(Blueprint $table) {
-            $table->string('residence');
+        Schema::table('ad', function (Blueprint $table) {
+            $table->integer('category_id')->unsigned();
+            $table->integer('user_id')->unsigned();
         });
     }
 
@@ -24,9 +25,8 @@ class AddResidenceFieldToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table)
-        {
-            $table->dropColumn('residence');
+        Schema::table('ad', function (Blueprint $table) {
+            Schema::drop('ad');
         });
     }
 }

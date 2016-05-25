@@ -19,8 +19,8 @@ class CreateAdTable extends Migration
             $table->string('city');
             $table->integer('price');
             $table->timestamps();
-            $table->integer('category_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->integer('category_id');
+            $table->integer('user_id');
         });
 
         Schema::table('ad', function($table) {
