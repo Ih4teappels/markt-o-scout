@@ -38,9 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $user->name = Request::input('name');
-        // $user->username = Request::input('username');
-        // $user->email = Request::input('email');
+        
     }
 
     /**
@@ -95,7 +93,9 @@ class UserController extends Controller
 
     public function postSaveAccount(Request $request) {
         $this->validate($request, [
-            'name' => 'required|max:120'
+            'name' => 'required|max:50',
+            'username' => 'max:50',
+            'email' => 'email|max:120'
         ]);
 
         $user = Auth::user();
