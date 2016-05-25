@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use DB;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +17,9 @@ class AdController extends Controller
      */
     public function index()
     {
-        //
+        $ad = DB::table('ad')->get();
+
+        return view('ad.index', ['ad' => $ad]);
     }
 
     /**
@@ -25,7 +29,9 @@ class AdController extends Controller
      */
     public function create()
     {
-        //
+       DB::table('ad')->insert(
+           ['product_name' => 'product_name']
+       );
     }
 
     /**
