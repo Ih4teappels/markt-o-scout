@@ -19,7 +19,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('auth/login', function () {
@@ -62,13 +62,9 @@ Route::get('ad', function(){
     return view('ad');
 });
 
-Route::get('welcome', function () {
-    return view('welcome');
-});
-
 
 
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/myAd', 'HomeController@index');
