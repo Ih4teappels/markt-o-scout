@@ -105,7 +105,7 @@ class UserController extends Controller
         $user->email = $request['email'];
         $user->update();
 
-        return view('account');
+        return redirect('account');
 
         
     }
