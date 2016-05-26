@@ -55,6 +55,14 @@ class AdController extends Controller
 
         );
 
+        $file = $request->file('image');
+        $path = storage_path('app/dbEntries');
+
+        if($file->isValid()){
+            $file->move($path);
+        }
+
+
         return view('ad');
     }
 
