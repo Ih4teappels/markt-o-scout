@@ -53,6 +53,17 @@ Account
                                     </span>
                                 @endif
 						</div>
+                        <div class="form-group{{ $errors->has('residence') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Residence</label>
+<?php      
+    echo '<div id="accountResidence" class="col-md-6"><input type="residence" class="form-control" name="residence" value="' . $session_id['residence'] . '"></input></div>';
+?>
+                        @if ($errors->has('residence'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('residence') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
 						<div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

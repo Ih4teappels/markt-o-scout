@@ -103,6 +103,7 @@ class UserController extends Controller
         $user->name = $request['name'];
         $user->username = $request['username'];
         $user->email = $request['email'];
+        $user->residence = $request['residence'];
         $user->update();
 
         return redirect('account');
