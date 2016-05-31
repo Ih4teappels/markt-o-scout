@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::auth();
+
+Route::get('/myAd', 'HomeController@index');
+
 Route::get('auth/login', function () {
     return view('login');
 });
@@ -61,10 +65,3 @@ Route::get('account', function () {
 Route::get('ad', function(){
     return view('ad');
 });
-
-
-
-
-Route::auth();
-
-Route::get('/myAd', 'HomeController@index');

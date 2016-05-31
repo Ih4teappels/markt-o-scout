@@ -9,6 +9,13 @@
 
                 <div class="panel-body">
                     On this page we show all the ad's you have placed
+
+                    <?php
+                        $session = Auth::Ad();
+
+                        echo $session['product_name'];
+
+                    ?>
                 </div>
             </div>
         </div>
