@@ -111,4 +111,9 @@ class AdController extends Controller
     {
         //
     }
+
+    public function postCreateAd() {
+        $ads = Ad::all();
+        return view('\myAd', ['ads' => $ads]);
+    }
 }
