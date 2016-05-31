@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class AdController extends Controller
 {
@@ -42,6 +43,11 @@ class AdController extends Controller
     public function store(Request $request)
     {
         $id = Auth::user();
+        $image_name = $request->file('image')->getClientOriginalName();
+
+        if ($request->hasFile('image')){
+            $request->file('image')->move(public_path().'\dbEntries\adImages', $image_name);
+        }
 
         DB::table('ad')->insert(
             [
@@ -50,19 +56,10 @@ class AdController extends Controller
                 'city' => $request['city'],
                 'price' => $request['price'],
                 'user_id' => $id->id,
-
+                'image' => $image_name
             ]
 
         );
-
-        $destinationpath = public_path() . '/dbEntries/';
-        $filename = $request->file('image')->getClientOriginalName();
-
-        $request->file('image')->move($destinationpath, $filename);
-
-        $this->create([
-
-        ]);
 
         return view('ad');
     }
