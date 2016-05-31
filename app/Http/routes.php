@@ -43,13 +43,14 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+Route::get('ad', 'CategoryController@create');
 Route::post('ad', 'AdController@store');
 
 Route::get('editProfile', 'UserController@getAccount');
 Route::post('editProfile', 'UserController@postSaveAccount');
 
 Route::get('account/edit', function() {
-	return view('auth/editAccount');
+    return view('auth/editAccount');
 });
 
 
@@ -60,8 +61,4 @@ Route::get('/dab', function () {
 
 Route::get('account', function () {
     return view('account');
-});
-
-Route::get('ad', function(){
-    return view('ad');
 });

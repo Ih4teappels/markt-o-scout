@@ -42,7 +42,7 @@
                                 {!! Form::label('category_id', 'Select a category suitable for your ad', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::select('category_id', array('cars' => 'Cars'), null, ['class' => 'form-control']) !!}
+                                    {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
                                         @if ($errors->has('category_id'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('category_id') }}</strong>

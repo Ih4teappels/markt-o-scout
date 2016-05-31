@@ -8,6 +8,6 @@ class Ad extends Model
 {
 
     protected $fillabe = [
-        'product_name', 'product_desc', 'city', 'price', 'image'
+        'product_name', 'product_desc', 'city', 'price', 'image', 'category_id',
     ];
 }
