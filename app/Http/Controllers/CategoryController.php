@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Category;
-use DB;
-use Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class AdController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +16,7 @@ class AdController extends Controller
      */
     public function index()
     {
-        $ad = DB::table('ad')->get();
-
-        return view('ad.index', ['ad' => $ad]);
+        $category = DB::table('categories')->get();
     }
 
     /**
@@ -32,6 +26,8 @@ class AdController extends Controller
      */
     public function create()
     {
+        $categories = Category::pluck('name');
+        return view('ad', compact('categories'));
 
     }
 
@@ -43,28 +39,7 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
-        $id = Auth::id();
 
-        $image_name = $request->file('image')->getClientOriginalName();
-
-        if ($request->hasFile('image')){
-            $request->file('image')->move(public_path().'\dbEntries\adImages', $image_name);
-        }
-
-        DB::table('ad')->insert(
-            [
-                'product_name' =>$request['product_name'],
-                'product_desc' => $request['product_desc'],
-                'city' => $request['city'],
-                'price' => $request['price'],
-                'user_id' => $id,
-                'image' => $image_name,
-                'category_id' => $request['category_id'],
-            ]
-
-        );
-
-        return view('ad');
     }
 
     /**
@@ -98,7 +73,8 @@ class AdController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
     }
 
     /**
@@ -112,8 +88,7 @@ class AdController extends Controller
         //
     }
 
-    public function postCreateAd() {
-        $ads = Ad::all();
-        return view('\myAd', ['ads' => $ads]);
+    public function getAccount() {
+
     }
 }
