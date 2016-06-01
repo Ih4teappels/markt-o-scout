@@ -38,6 +38,11 @@ class AdController extends Controller
         return view('/myAd', compact('oneAd'));
     }
 
+    public function allAds() 
+    {
+        $ads = Ad::pluck('product_name', 'product_desc');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
