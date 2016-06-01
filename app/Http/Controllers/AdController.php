@@ -38,11 +38,12 @@ class AdController extends Controller
         return view('/myAd', compact('oneAd'));
     }
 
-    public function singleAd() 
+    public function singleAd($id) 
     {
-        $singleAd = DB::table('ads')->where('id', 'user_id')->get();
+
+        $ad = DB::table('ads')->where('id', $id)->first();
         
-        return view('singleAd', compact('singleAd'));
+        return view('singleAd', compact('ad'));
     }
 
     public function allAds()

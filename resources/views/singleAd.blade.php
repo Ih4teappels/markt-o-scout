@@ -9,13 +9,12 @@
 
                     <div class="panel-body">
 
-                        @foreach($singleAd as $ad)
                         <div>
                             <h2>{{ $ad->product_name }}</h2>
                             <p>{{ $ad->product_desc }}</p>
-                            <img src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image">
+                            <img src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="300">
                         </div>
-                        @endforeach
+
                     </div>
                 </div>
             </div>
