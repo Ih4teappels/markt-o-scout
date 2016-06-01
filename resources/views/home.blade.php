@@ -8,7 +8,13 @@
                 <div class="panel-heading">Home</div>
 
                 <div class="panel-body">
-                    On this page we show all the ad's on our website
+                    @foreach($ads as $ad)
+
+                        <h2>{{ $ad->product_name }}</h2>
+                        <p>{{ $ad->product_desc }}</p>
+                        <img src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="300">
+
+                    @endforeach
                 </div>
             </div>
         </div>
