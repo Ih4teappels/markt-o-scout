@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/myAd', 'HomeController@index');
+Route::get('/myAd', 'AdController@create');
 
 Route::get('auth/login', function () {
     return view('login');

@@ -8,10 +8,8 @@
                 <div class="panel-heading">My ad's</div>
 
                 <div class="panel-body">
-                    On this page we show all the ad's you have placed
-                    @foreach($ads as $ad)
-                        <h2>{{!! $ad->product_name !!}}</h2>
-                    @endforeach
+
+                    <?php echo $oneAd; ?>
                     
                 </div>
             </div>

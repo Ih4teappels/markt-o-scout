@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Ad;
 use App\Category;
 use DB;
 use Auth;
@@ -20,9 +21,7 @@ class AdController extends Controller
      */
     public function index()
     {
-        $ad = DB::table('ad')->get();
-
-        return view('ad.index', ['ad' => $ad]);
+        DB::table('ad')->get();
     }
 
     /**
@@ -32,7 +31,9 @@ class AdController extends Controller
      */
     public function create()
     {
+        $oneAd = Ad::pluck('product_name', 'product_desc');
 
+        return view('/myAd', compact('oneAd'));
     }
 
     /**
@@ -51,7 +52,7 @@ class AdController extends Controller
             $request->file('image')->move(public_path().'\dbEntries\adImages', $image_name);
         }
 
-        DB::table('ad')->insert(
+        DB::table('ads')->insert(
             [
                 'product_name' =>$request['product_name'],
                 'product_desc' => $request['product_desc'],
