@@ -29,7 +29,7 @@ class AdController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function userAds()
     {
         $user_id = Auth::id();
         $oneAd = DB::table('ads')->where('user_id', $user_id)->get();
@@ -38,11 +38,20 @@ class AdController extends Controller
         return view('/myAd', compact('oneAd'));
     }
 
+    public function singleAd($id) 
+    {
+
+        $ad = DB::table('ads')->where('id', $id)->first();
+        
+        return view('singleAd', compact('ad'));
+    }
+
     public function allAds()
     {
-        $ads = Ad::pluck('product_name', 'product_desc');
+        // $ads = Ad::pluck('product_name', 'product_desc');
+        $ads = DB::table('ads')->get();
 
-
+        return view('home', compact('ads'));
     }
 
     /**

@@ -14,17 +14,16 @@
 Route::group(['middleware' => ['web']], function () {
     // Put all your routes inside here.
 
-
-});
-
-
-Route::get('/', function () {
-    return view('home');
 });
 
 Route::auth();
 
-Route::get('/myAd', 'AdController@create');
+Route::get('/', 'AdController@allAds');
+
+
+Route::get('/myAd', 'AdController@userAds');
+
+Route::get('singleAd/{id}', 'AdController@singleAd');
 
 Route::get('auth/login', function () {
     return view('login');
