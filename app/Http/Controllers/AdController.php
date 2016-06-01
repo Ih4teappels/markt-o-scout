@@ -41,6 +41,8 @@ class AdController extends Controller
     public function allAds()
     {
         $ads = Ad::pluck('product_name', 'product_desc');
+
+
     }
 
     /**
