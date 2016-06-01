@@ -15,7 +15,7 @@
                                 {!! Form::label('product_name', 'Title of your ad', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::text('product_name', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('product_name', null, ['required', 'class' => 'form-control']) !!}
                                         @if ($errors->has('product_name'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('product_name') }}</strong>
@@ -28,7 +28,7 @@
                                 {!! Form::label('product_desc', 'Provide your ad with a short description', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::textarea('product_desc', null, ['class' => 'form-control', 'style' => 'height:2in']) !!}
+                                    {!! Form::textarea('product_desc', null, ['required', 'class' => 'form-control', 'style' => 'height:2in']) !!}
                                         @if ($errors->has('product_desc'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('product_desc') }}</strong>
@@ -42,7 +42,7 @@
                                 {!! Form::label('category_id', 'Select a category suitable for your ad', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+                                    {!! Form::select('category_id', $categories, null, ['required', 'class' => 'form-control']) !!}
                                         @if ($errors->has('category_id'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('category_id') }}</strong>
@@ -55,7 +55,7 @@
                                 {!! Form::label('city', 'City', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('city', null, ['required', 'class' => 'form-control']) !!}
                                         @if ($errors->has('city'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('city') }}</strong>
@@ -68,7 +68,7 @@
                                 {!! Form::label('price', 'Price', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::number('price', null, ['class' => 'form-control']) !!}
+                                    {!! Form::number('price', null, ['required', 'class' => 'form-control']) !!}
                                         @if ($errors->has('price'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('price') }}</strong>
@@ -81,7 +81,7 @@
                                 {!! Form::label('image', 'Select (preferably multiple) photos of the item you want to put up for sale', ['class' => 'col-md-4 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::file('image', null, ['class' => 'form-control']) !!}
+                                    {!! Form::file('image', null, ['required', 'class' => 'form-control', 'placeholder' => 'select category']) !!}
                                         @if ($errors->has('image'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('image') }}</strong>

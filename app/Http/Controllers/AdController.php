@@ -64,7 +64,7 @@ class AdController extends Controller
 
         );
 
-        return view('ad');
+        return redirect('/');
     }
 
     /**
