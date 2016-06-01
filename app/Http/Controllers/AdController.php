@@ -64,7 +64,7 @@ class AdController extends Controller
 
         );
 
-        return view('ad');
+        return redirect('/');
     }
 
     /**
@@ -110,5 +110,10 @@ class AdController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function postCreateAd() {
+        $ads = Ad::all();
+        return view('\myAd', ['ads' => $ads]);
     }
 }

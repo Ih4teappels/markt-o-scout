@@ -9,13 +9,10 @@
 
                 <div class="panel-body">
                     On this page we show all the ad's you have placed
-
-                    <?php
-                        $session = Auth::Ad();
-
-                        echo $session['product_name'];
-
-                    ?>
+                    @foreach($ads as $ad)
+                        <h2>{{!! $ad->product_name !!}}</h2>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
