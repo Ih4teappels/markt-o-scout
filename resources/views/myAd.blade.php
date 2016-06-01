@@ -1,19 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">My ad's</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">My ads</div>
 
-                <div class="panel-body">
+                    <div class="panel-body">
 
-                    <?php echo $oneAd; ?>
-                    
+                        @foreach($oneAd as $ad)
+
+                            {{ $ad->product_name }}
+
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

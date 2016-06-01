@@ -31,9 +31,16 @@ class AdController extends Controller
      */
     public function create()
     {
-        $oneAd = Ad::pluck('product_name', 'product_desc');
+        $user_id = Auth::id();
+        $oneAd = DB::table('ads')->where('user_id', $user_id)->get();
+        // $oneAd = Ad::pluck('product_name', 'product_desc');
 
         return view('/myAd', compact('oneAd'));
+    }
+
+    public function allAds()
+    {
+        $ads = Ad::pluck('product_name', 'product_desc');
     }
 
     /**
@@ -65,7 +72,7 @@ class AdController extends Controller
 
         );
 
-        return redirect('/');
+        return redirect('myAd');
     }
 
     /**
