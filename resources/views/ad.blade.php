@@ -9,7 +9,7 @@
                     <div class="panel-body">
 
                         <div class="form-horizontal">
-                            {!! Form::open(array('url' => 'ad', 'method' => 'POST', 'files' => true)) !!}
+                            {!! Form::open(array('url' => '/ad', 'method' => 'POST', 'files' => true)) !!}
 
                             <div class="form-group">
                                 {!! Form::label('product_name', 'Title of your ad', ['class' => 'col-md-4 control-label']) !!}
