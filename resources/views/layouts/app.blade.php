@@ -65,7 +65,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                 <li><a href="{{ url('/account') }}"><i class="fa fa-btn fa-account"></i>Account</a></li>
-                                <li><a href="{{ url('/myAd') }}"><i class="fa fa-btn fa-account"></i>My Ad's</a></li>
+                                <li><a href="{{ url('/profile/ad') }}"><i class="fa fa-btn fa-account"></i>My Ad's</a></li>
                                 <li><a href="{{ url('/ad') }}"><i class="fa fa-btn fa-account"></i>Place an ad</a></li>
 
                             </ul>

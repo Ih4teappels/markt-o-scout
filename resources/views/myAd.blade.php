@@ -10,7 +10,7 @@
                     <div class="panel-body">
 
                         @foreach($oneAd as $ad)
-                        <a href="singleAd/{{ $ad->id }}">
+                        <a href="../Ad/{{ $ad->id }}">
                             <div>
                                 <h2>{{ $ad->product_name }}</h2>
                                 <p>{{ $ad->product_desc }}</p>
