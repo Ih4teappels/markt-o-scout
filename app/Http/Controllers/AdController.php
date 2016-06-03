@@ -83,7 +83,7 @@ class AdController extends Controller
 
         );
 
-        return redirect('myAd');
+        return redirect('profile/ad');
     }
 
     /**
