@@ -7,16 +7,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">My ads</div>
 
-                    <div class="panel-body">
+                    <div class="panel-body adList">
 
                         @foreach($oneAd as $ad)
+                        <div class="listAd">
                         <a href="../Ad/{{ $ad->id }}">
-                            <div>
-                                <h2>{{ $ad->product_name }}</h2>
-                                <p>{{ $ad->product_desc }}</p>
-                                <img src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="300">
-                            </div>
+                            <h2 class="adHeader">{{ $ad->product_name }}</h2>
                         </a>
+                        <img class="adListImg" src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="150" width="150">
+                        </div>
                         @endforeach
                     </div>
                 </div>

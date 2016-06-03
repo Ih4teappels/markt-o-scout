@@ -1,7 +1,9 @@
-html, body {
+/*html, body {
     height: 100%;
     background-color: #1c7847;
 }
+
+
 
 body {
     margin: 0;
@@ -71,4 +73,34 @@ body {
     padding-top: .1em;
     padding-bottom: .1em;
     cursor: pointer;
+}*/
+
+.adList a {
+    text-decoration: none;
+}
+
+.adList a:hover {
+    text-decoration: none;
+}
+
+.listAd {
+    padding-bottom: 1em;
+    margin-bottom: 3em;
+    
+    border-bottom: 1px solid #1c7847;
+}
+
+
+.adHeader:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.adHeader {
+   text-decoration: none; 
+   color: #1c7847;
+}
+
+.adListImg {
+
 }
