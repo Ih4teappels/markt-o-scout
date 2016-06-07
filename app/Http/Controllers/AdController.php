@@ -92,7 +92,7 @@ class AdController extends Controller
 
 
 
-        return redirect('/Ad/' . $id);
+        return redirect('/ad/' . $id);
     }
 
     /**
