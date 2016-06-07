@@ -46,6 +46,13 @@ class AdController extends Controller
         return view('singleAd', compact('ad'));
     }
 
+    public function recentAd(){
+        $id = Auth::id();
+
+
+        return view('myAd', compact('ad'));
+    }
+
     public function allAds()
     {
         // $ads = Ad::pluck('product_name', 'product_desc');
@@ -62,7 +69,7 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
-        $id = Auth::id();
+        $userId = Auth::id();
 
         $image_name = $request->file('image')->getClientOriginalName();
 
@@ -70,20 +77,22 @@ class AdController extends Controller
             $request->file('image')->move(public_path().'\dbEntries\adImages', $image_name);
         }
 
-        DB::table('ads')->insert(
+        $id = DB::table('ads')->insertGetId(
             [
                 'product_name' =>$request['product_name'],
                 'product_desc' => $request['product_desc'],
                 'city' => $request['city'],
                 'price' => $request['price'],
-                'user_id' => $id,
+                'user_id' => $userId,
                 'image' => $image_name,
                 'category_id' => $request['category_id'],
             ]
 
         );
 
-        return redirect('profile/ad');
+
+
+        return redirect('/Ad/' . $id);
     }
 
     /**
