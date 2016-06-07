@@ -11,6 +11,7 @@
 
                         <div>
                             <p>{{ $ad->product_desc }}</p>
+                            <p>${{ $ad->price }}</p>
                             <img src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="300">
                         </div>
 
@@ -25,9 +26,9 @@
                             <div class="col-md-6">
                                 {{ Form::text('comment') }}
 
-                                @if ($errors->has('username'))
+                                @if ($errors->has('comment'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
+                                        <strong>{{ $errors->first('comment') }}</strong>
                                     </span>
                                 @endif
                             </div>

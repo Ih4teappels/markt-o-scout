@@ -23,7 +23,7 @@ Route::get('/', 'AdController@allAds');
 
 Route::get('/profile', 'AdController@userAds');
 
-Route::get('Ad/{id}', 'AdController@singleAd');
+Route::get('ad/{id}', 'AdController@singleAd');
 
 Route::get('auth/login', function () {
     return view('login');
@@ -42,12 +42,15 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// Posting ad routes...
 Route::get('ad', 'CategoryController@create');
 Route::post('ad', 'AdController@store');
 
+// Edit profile routes...
 Route::get('editProfile', 'UserController@getAccount');
 Route::post('editProfile', 'UserController@postSaveAccount');
 
+//Show account routes...
 Route::get('account/edit', function() {
     return view('auth/editAccount');
 });

@@ -10,7 +10,7 @@
                 <div class="panel-body adList">
                     @foreach($ads as $ad)
                     <div class="listAd">
-                        <a href="Ad/{{ $ad->id }}">
+                        <a href="ad/{{ $ad->id }}">
                         
                             <h2 class="adHeader">{{ $ad->product_name }}</h2>
                         </a>

@@ -11,7 +11,7 @@
 
                         @foreach($oneAd as $ad)
                         <div class="listAd">
-                        <a href="../Ad/{{ $ad->id }}">
+                        <a href="../ad/{{ $ad->id }}">
                             <h2 class="adHeader">{{ $ad->product_name }}</h2>
                         </a>
                         <img class="adListImg" src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="150" width="150">
