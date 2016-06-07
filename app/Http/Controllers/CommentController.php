@@ -12,22 +12,29 @@ use App\Http\Requests;
 
 class CommentController extends Controller
 {
-    public function postComment(Request $request) {
-    
-        $adId = Comment::id();
+    public function postCreateComment(Request $request) {
 
-        $id = DB::table('comments')->insertGetId(
+    	$this->validate($request, [
+            'content' => 'required|min:1',
+        ]);
+
+    	$userId = Auth::id();
+    	$adId = Comment::user_id();
+
+    	$id = DB::table('comments')->insertGetId(
             [
-                'id' =>$request['id'],
-                'content' => $request['content'],
-                'user_id' => Auth::id(),
+                'content' =>$request['content'],
                 'ad_id' => $adId,
+                'user_id' => $userId,
+
             ]
+
         );
 
 
 
         return redirect('/ad/' . $id);
-    
+
     }
+    
 }
