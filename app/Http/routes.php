@@ -21,7 +21,7 @@ Route::auth();
 Route::get('/', 'AdController@allAds');
 
 
-Route::get('/profile/ad', 'AdController@userAds');
+Route::get('/profile', 'AdController@userAds');
 
 Route::get('Ad/{id}', 'AdController@singleAd');
 
