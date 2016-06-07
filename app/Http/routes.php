@@ -46,6 +46,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('ad', 'CategoryController@create');
 Route::post('ad', 'AdController@store');
 
+// Posting comments routes...
+Route::post('ad/postComment', 'CommentController@postComment');
+
 // Edit profile routes...
 Route::get('editProfile', 'UserController@getAccount');
 Route::post('editProfile', 'UserController@postSaveAccount');

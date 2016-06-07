@@ -19,16 +19,16 @@
                 </div>
                 <div class="panel panel-default">
                 <div class="panel-body">
-                     {!! Form::open(array('url' => '/ad/{id}', 'method' => 'POST')) !!}
+                     {!! Form::open(array('url' => '/ad/postComment', 'method' => 'POST')) !!}
                         <div class="form-group">
                             <label class="col-md-4 control-label">Comment</label>
 
                             <div class="col-md-6">
-                                {{ Form::text('comment') }}
+                                {{ Form::text('content') }}
 
-                                @if ($errors->has('comment'))
+                                @if ($errors->has('content'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('comment') }}</strong>
+                                        <strong>{{ $errors->first('content') }}</strong>
                                     </span>
                                 @endif
                             </div>
