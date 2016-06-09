@@ -20,11 +20,13 @@
                 <div class="panel panel-default">
                 <div class="panel-body">
                      {!! Form::open(array('url' => '/ad/postComment', 'method' => 'POST')) !!}
+                     {!! csrf_field() !!}
+                     <input type="hidden" name="adId"  value="{{ $ad->id }}">
                         <div class="form-group">
                             <label class="col-md-4 control-label">Comment</label>
 
                             <div class="col-md-6">
-                                {{ Form::text('content') }}
+                                {{ Form::text('content', null, ['name' => 'content']) }}
 
                                 @if ($errors->has('content'))
                                     <span class="help-block">

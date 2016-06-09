@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Comment;
 use App\Ad;
 use App\Category;
 use DB;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Crypt;
 
 use App\Http\Requests;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -139,6 +141,27 @@ class AdController extends Controller
     {
         //
     }
+
+    public function storeComment(Request $request){
+
+        $userId = Auth::id();
+        $pageId = $request['adId'];
+        $adId = DB::table('ads')->where('id', $pageId)->first();
+        echo "Dit is een print";
+        print_r($adId);
+
+        DB::table('comments')->insert(
+            [
+                'content' => $request['content'],
+                'user_id' => $userId,
+                'ad_id' => $adId->id,
+            ]
+        );
+
+
+
+    return redirect('ad/' . $adId->id);
+}
 
     public function postCreateAd() {
         $ads = Ad::all();

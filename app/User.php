@@ -28,4 +28,8 @@ class User extends Authenticatable
     public function ads() {
         return $this->hasMany('App\Ad');
     }
+
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
 }

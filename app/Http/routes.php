@@ -25,10 +25,12 @@ Route::get('/profile', 'AdController@userAds');
 
 Route::get('ad/{id}', 'AdController@singleAd');
 
+
+
+// Show login/registration routes...
 Route::get('auth/login', function () {
     return view('login');
 });
-
 Route::get('auth/register', function () {
     return view('register');
 });
@@ -47,7 +49,7 @@ Route::get('ad', 'CategoryController@create');
 Route::post('ad', 'AdController@store');
 
 // Posting comments routes...
-Route::post('ad/postComment', 'CommentController@postComment');
+Route::post('ad/postComment', 'AdController@storeComment');
 
 // Edit profile routes...
 Route::get('editProfile', 'UserController@getAccount');
