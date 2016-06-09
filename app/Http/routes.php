@@ -25,10 +25,12 @@ Route::get('/profile', 'AdController@userAds');
 
 Route::get('ad/{id}', 'AdController@singleAd');
 
+
+
+// Show login/registration routes...
 Route::get('auth/login', function () {
     return view('login');
 });
-
 Route::get('auth/register', function () {
     return view('register');
 });

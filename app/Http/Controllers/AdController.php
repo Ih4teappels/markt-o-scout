@@ -145,15 +145,22 @@ class AdController extends Controller
     public function storeComment(Request $request){
 
         $userId = Auth::id();
+        $pageId = $request['adId'];
+        $adId = DB::table('ads')->where('id', $pageId)->first();
+        echo "Dit is een print";
+        print_r($adId);
 
-        $id = DB::table('comments')->insertGetId(
+        DB::table('comments')->insert(
             [
                 'content' => $request['content'],
                 'user_id' => $userId,
+                'ad_id' => $adId->id,
             ]
         );
 
-    return redirect('ad/' . $id);
+
+
+    return redirect('ad/' . $adId->id);
 }
 
     public function postCreateAd() {

@@ -21,6 +21,7 @@
                 <div class="panel-body">
                      {!! Form::open(array('url' => '/ad/postComment', 'method' => 'POST')) !!}
                      {!! csrf_field() !!}
+                     <input type="hidden" name="adId"  value="{{ $ad->id }}">
                         <div class="form-group">
                             <label class="col-md-4 control-label">Comment</label>
 
