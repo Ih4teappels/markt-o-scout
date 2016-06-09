@@ -18,7 +18,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::auth();
 
-Route::get('/', 'AdController@allAds');
+Route::get('/', 'AdController@allAds', 'CategoryController@getSelectValues');
 
 
 Route::get('/profile', 'AdController@userAds');

@@ -42,8 +42,9 @@ class AdController extends Controller
     {
 
         $ad = DB::table('ads')->where('id', $id)->first();
+        $name = DB::table('users')->where('id', Auth::id())->first();
         
-        return view('singleAd', compact('ad'));
+        return view('singleAd', compact('ad', 'name'));
     }
 
     public function recentAd(){
@@ -57,8 +58,9 @@ class AdController extends Controller
     {
         // $ads = Ad::pluck('product_name', 'product_desc');
         $ads = DB::table('ads')->get();
+        $categories = Category::pluck('name');
 
-        return view('home', compact('ads'));
+        return view('home', compact('ads', 'categories'));
     }
 
     /**
@@ -89,8 +91,6 @@ class AdController extends Controller
             ]
 
         );
-
-
 
         return redirect('/ad/' . $id);
     }

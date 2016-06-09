@@ -31,6 +31,12 @@ class CategoryController extends Controller
 
     }
 
+    public function getSelectValues()
+    {
+
+        return view('home', compact('categories'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -6,6 +6,9 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Home</div>
+                <div id="sortByCategory">
+                    {!! Form::select('sort', $categories, null, ['placeholder' => 'Select a category for a more detailed search...', 'required', 'class' => 'form-control']) !!}
+                </div>
 
                 <div class="panel-body adList">
                     @foreach($ads as $ad)

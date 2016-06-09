@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>{{ $ad->product_name }}</h4></div>
+                    <div class="panel-heading"><h4>{{ $ad->product_name }}</h4><div class="byWho" style="color: #A7A7A7"><p>by {{ $name->name }} in {{ $name->residence }}</p></div></div>
 
                     <div class="panel-body">
 
                         <div>
                             <p>{{ $ad->product_desc }}</p>
                             <p>${{ $ad->price }}</p>
-                            <img src="/dbEntries/adImages/{{ $ad->image}}" alt="Product Image" height="300">
+                            <img src="/dbEntries/adImages/{{ $ad->image }}" alt="Product Image" height="300">
                         </div>
 
                     </div>
