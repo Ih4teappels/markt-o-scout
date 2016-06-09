@@ -24,6 +24,7 @@ Route::get('/', 'AdController@allAds', 'CategoryController@getSelectValues');
 Route::get('/profile', 'AdController@userAds');
 
 Route::get('ad/{id}', 'AdController@singleAd');
+// Route::get('ad/{id}', 'CommentController@getComment');
 
 
 

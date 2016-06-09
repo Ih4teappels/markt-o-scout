@@ -39,9 +39,27 @@
                                 <div class="col-md-6 col-md-offset-4">
                                     {!! Form::submit('Place Comment', null, ['class' => 'btn btn-primary']) !!}
                                 </div>
-                            </div>
+                        </div>
 
                     {!! Form::close() !!}
+                    </div>
+                </div>
+                    <!-- @foreach($comments as $comment) -->
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label class="col-md-4 control-label">Comment</label>
+
+                            <div class="col-md-6">
+                                
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                   {{ $comments->content }}
+                                </div>
+                            </div>
+                        </div>
+                    <!-- @endforeach -->
                     </div>
                 </div>
             </div>

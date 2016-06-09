@@ -45,8 +45,11 @@ class AdController extends Controller
 
         $ad = DB::table('ads')->where('id', $id)->first();
         $name = DB::table('users')->where('id', Auth::id())->first();
+
+        $comments = DB::table('comments')->where('ad_id', $id)->first();
+
         
-        return view('singleAd', compact('ad', 'name'));
+        return view('singleAd', compact('ad', 'name', 'comments'));
     }
 
     public function recentAd(){
@@ -95,6 +98,14 @@ class AdController extends Controller
         );
 
         return redirect('/ad/' . $id);
+    }
+
+    public function getComment() {
+
+        $comments = DB::table('comments')->get();
+
+        // $comment = $getComment->content;
+
     }
 
     /**
