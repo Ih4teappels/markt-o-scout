@@ -23,7 +23,7 @@
                      {!! csrf_field() !!}
                      <input type="hidden" name="adId"  value="{{ $ad->id }}">
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Comment</label>
+                            <label class="col-md-4 control-label">Place Comment</label>
 
                             <div class="col-md-6">
                                 {{ Form::text('content', null, ['name' => 'content']) }}
@@ -60,15 +60,13 @@
                         </div>
                         @else
                         <div class="panel panel-default">
-                        <div class="panel-body">
-                            
-                        
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                   <p>There are no comments</p>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                       <p>There are no comments</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                         @endif
                     </div>
