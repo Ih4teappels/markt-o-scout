@@ -158,8 +158,6 @@ class AdController extends Controller
         $userId = Auth::id();
         $pageId = $request['adId'];
         $adId = DB::table('ads')->where('id', $pageId)->first();
-        echo "Dit is een print";
-        print_r($adId);
 
         DB::table('comments')->insert(
             [

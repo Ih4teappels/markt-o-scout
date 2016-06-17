@@ -44,14 +44,13 @@
                     {!! Form::close() !!}
                     </div>
                 </div>
-                    <!-- @foreach($comments as $comment) -->
+
+                        @if (isset($comments))
+                            
+                        
                         <div class="panel panel-default">
                         <div class="panel-body">
                             <label class="col-md-4 control-label">Comment</label>
-
-                            <div class="col-md-6">
-                                
-                            </div>
                         </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
@@ -59,10 +58,20 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- @endforeach -->
+                        @else
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                        
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                   <p>There are no comments</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
