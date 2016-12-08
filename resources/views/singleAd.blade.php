@@ -12,7 +12,7 @@
                         <div>
                             <p>{{ $ad->product_desc }}</p>
                             <p>${{ $ad->price }}</p>
-                            <img src="/dbEntries/adImages/{{ $ad->image }}" alt="Product Image" height="300">
+                            <img src="/markt-o-scout/public/dbEntries/adImages/{{ $ad->image }}" alt="Product Image" height="300">
                         </div>
 
                     </div>

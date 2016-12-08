@@ -78,11 +78,13 @@ class AdController extends Controller
     {
         $userId = Auth::id();
 
-        $image_name = $request->file('image')->getClientOriginalName();
 
-        if ($request->hasFile('image')){
-            $request->file('image')->move(public_path().'\dbEntries\adImages', $image_name);
-        }
+         //GEBLOKKEERD OM VEILIGHEIDS REDENEN
+        // $image_name = $request->file('image')->getClientOriginalName();
+
+        // if ($request->hasFile('image')){
+        //     $request->file('image')->move(public_path().'/dbEntries/adImages', $image_name);
+        // }
 
         $id = DB::table('ads')->insertGetId(
             [
